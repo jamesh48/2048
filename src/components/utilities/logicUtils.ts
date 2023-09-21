@@ -15,6 +15,14 @@ export const arraysAreEqual = (arr1: number[], arr2: number[]) => {
   return true;
 };
 
+export const randomTwoOrFour = () => {
+  if (Math.random() <= 0.9) {
+    return 2;
+  } else {
+    return 4;
+  }
+};
+
 export const calculateAnimations = (
   arr: number[],
   direction: 'left' | 'right' | 'up' | 'down'

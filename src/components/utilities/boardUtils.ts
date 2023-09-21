@@ -1,4 +1,8 @@
-import { calculateAnimations, pickRandomDistinctNumber } from './logicUtils';
+import {
+  calculateAnimations,
+  pickRandomDistinctNumber,
+  randomTwoOrFour,
+} from './logicUtils';
 
 export function transposeBoard(board: number[][]) {
   const numRows = board.length;
@@ -127,7 +131,7 @@ export const placeNewTile = (
     for (let j = 0; j < existingBoardMatrix[i].length; j++) {
       const cellIndex = i * 4 + j;
       if (zeroPlacements.includes(cellIndex)) {
-        existingBoardMatrix[i][j] = 2;
+        existingBoardMatrix[i][j] = randomTwoOrFour();
       }
     }
   }

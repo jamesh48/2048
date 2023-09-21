@@ -193,7 +193,10 @@ const animateTiles = (boardMatrix: number[][], direction: "left" | "right" | "up
         const rowResult = zeroSandwichOrAdjacent(boardRow, direction);
 
         if (rowResult) {
-          total.push([rowIndex].concat(...rowResult));
+          rowResult.forEach((result) => {
+            result.unshift(rowIndex);
+            total.push(result);
+          });
         }
         return total;
       }, [] as number[][]);
@@ -204,7 +207,10 @@ const animateTiles = (boardMatrix: number[][], direction: "left" | "right" | "up
       const rowResult = zeroSandwichOrAdjacent(boardRow, direction);
 
       if (rowResult) {
-        total.push([rowIndex].concat(...rowResult));
+        rowResult.forEach((result) => {
+          result.unshift(rowIndex);
+          total.push(result);
+        });
       }
       return total;
     }, [] as number[][]);
